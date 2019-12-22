@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  description: MyString
+  type: 
+  img: MyString
+  os: MyString
+  device-make: MyString
+  pl: MyString
+  pl-version: MyString
+  text-editor: MyString
+  no-users: 1
+
+two:
+  user: two
+  title: MyString
+  description: MyString
+  type: 
+  img: MyString
+  os: MyString
+  device-make: MyString
+  pl: MyString
+  pl-version: MyString
+  text-editor: MyString
+  no-users: 1
