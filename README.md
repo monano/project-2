@@ -1,5 +1,5 @@
 <!-- heading section -->
-# IT Issues Solving comunety
+# IT Issues Solving Community
 
 This is a two players game that start with each player having 3 stones to place it on the board,
 The winner is the first player to align their three pieces on a vertical line or horizontal line.
