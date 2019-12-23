@@ -1,0 +1,19 @@
+<h1>show page</h1>
+<h1><%= @issue.title %></h1>
+<h5><%= @issue.created_at %> | <%= @issue.updated_at %> </h5>
+<h4><%= @issue.description %> </h4>
+<h5><%= @issue.issue_type %> </h5>
+<h5><%= @issue.os %> </h5>
+<h5><%= @issue.device_make %> </h5>
+<h5><%= @issue.pl %> | <%= @issue.pl_version %>  </h5>
+<h5><%= @issue.text_editor %> </h5>
+<h5><%= @issue.no_users %> </h5>
+
+<% if (@back_path == "http://localhost:3000/issues/new" || "http://localhost:3000/issues/:id/edit" )%>
+<button><%= link_to "back", root_path %></button>
+<% else %>
+<button><%= link_to "back", :back %></button>
+<% end %>
+
+
+

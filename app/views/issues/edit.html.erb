@@ -1,0 +1,33 @@
+<h1>edit page</h1>
+
+<%= form_for @issue, url:{action: "update"} do |f| %>
+        <%= f.label :title, 'Title : ' %><br>
+        <%= f.text_field :title %><br><br>
+
+        <%= f.label :description, 'Description : ' %><br>
+        <%= f.text_field :description %><br><br>
+
+        <%= f.label :issue_type, 'issue_type : ' %><br>
+        <%= f.text_field :issue_type %><br><br>
+
+        <%= f.label :img, 'Image :' %><br>
+        <%= f.text_field :img  %><br><br>
+
+         <%= f.label :os, 'OS : ' %><br>
+        <%= f.text_field :os %><br><br>
+
+        <%= f.label :device_make, 'device_make : ' %><br>
+        <%= f.text_field :device_make %><br><br>
+
+        <%= f.label :pl, 'PL : ' %><br>
+        <%= f.text_field :pl %><br><br>
+
+        <%= f.label :pl_version, 'PL_version :' %><br>
+        <%= f.text_field :pl_version  %><br><br>
+
+        <%= f.label :text_editor, 'text_editor :' %><br>
+        <%= f.text_field :text_editor  %><br><br>
+
+        <%= f.submit " Save " %>
+
+<% end %>

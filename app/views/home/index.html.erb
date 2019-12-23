@@ -1,35 +1,42 @@
 <h1>Home page</h1>
 <%if(user_signed_in?)%>
+
 <h1><%= @user.username %> </h1>
 <button> <%= link_to "Edit Account", edit_user_registration_path %> </button>
 <button> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </button>
+<button> <%= link_to "new", new_issue_path %> </button>
+<button> <%= link_to "issues", issues_path %> </button>
+
 <% else %>
 <button> <%= link_to "Log In", new_user_session_path %></button>
-<button> <%= link_to "Sign Up"%>
+<button> <%= link_to "Sign Up", new_user_registration_path %></button>
 <% end %>
 
-<button> <%= link_to "new", new_issue_path %> </button>
-<button> <%= link_to "issues", issues_path , method: :delete %> </button>
+
 <%# <button> link_to "solutions" </button> %>
 <%# <button> link_to "comments" </button> %>
-
-<% i=0 %>
-<% @issues.each do |issue| %>
-<% i=i+1 %>
 <div>
 <table>
 <thead>
 <th>#</th>
 <th>Title</th>
 <th>Type</th>
+<th>Operating System</th>
+<th>Asked On</th>
 </thead>
 <tbody>
+<% i=0 %>
+<% @issues.each do |issue| %>
+<% i=i+1 %>
 <tr>
-<th scope='row'><%=i%>
-<td><%= issue.title%></td>
+<th scope='row'><%=i%></th>
+<td><%= link_to issue.title, issue_path(issue) %></td>
 <td><%= issue.issue_type%></td>
+<td><%= issue.os %></td>
+<td><%= issue.created_at.to_date %></td>
 </tr>
+<% end %>
+
 </tbody>
 </table>
 </div>
-<% end %>

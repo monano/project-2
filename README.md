@@ -42,8 +42,12 @@ The winner is the first player to align their three pieces on a vertical line or
    - wireframe
    - user story
    - ERD
+   - devise users
+   - model issues
+   
 ### Day Two
-
+   - model issues edit update and delete
+   - model solution
 ### Day Three
    
 ### Day Four <last day>
