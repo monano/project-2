@@ -12,7 +12,7 @@ The winner is the first player to align their three pieces on a vertical line or
 ## Website ERD, Wireframe and User Stories
 <!-- images -->
 ### ERD
-![ERD](app/assets/images/ERD.jpg)
+![ERD](app/assets/images/ERD.png)
 ### Wireframe
 #### Home Page
 ![Home Page](app/assets/images/Wireframe_home.png)
@@ -46,8 +46,8 @@ The winner is the first player to align their three pieces on a vertical line or
    - model issues
    
 ### Day Two
-   - model issues edit update and delete
-   - model solution
+   - model issues update and delete
+   - model solution CRUD
 ### Day Three
    
 ### Day Four <last day>

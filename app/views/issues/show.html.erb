@@ -8,6 +8,8 @@
 <h5><%= @issue.pl %> | <%= @issue.pl_version %>  </h5>
 <h5><%= @issue.text_editor %> </h5>
 <h5><%= @issue.no_users %> </h5>
+<button><%= link_to "add answers" , new_issue_answer_path(@issue) %>
+<button> <%= link_to "Answers", issue_answers_path(@issue) %> </button>
 
 <% if (@back_path == "http://localhost:3000/issues/new" || "http://localhost:3000/issues/:id/edit" )%>
 <button><%= link_to "back", root_path %></button>

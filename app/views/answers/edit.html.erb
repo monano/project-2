@@ -1,0 +1,8 @@
+<h1>edit answer</h1>
+<%= form_for @answer, url:{action: "update"} do |f| %>
+<%= f.hidden_field :issue_id, :value => @issue.id %>
+<%= f.label :description , 'Description : '%><br>
+<%= f.text_field :description %>
+<%= f.submit " save " %>
+<% end %>
+<button> <%= link_to "Back", :back %> </button>
