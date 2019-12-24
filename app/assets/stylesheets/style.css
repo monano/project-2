@@ -1,0 +1,46 @@
+/* Classes */
+.nav.navbar-nav{
+    display: inline;
+}
+.container{
+    width: 1200px;
+    margin: 0px;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url("https://thebristolcable.org/wp-content/uploads/2016/01/CallCentresFINAL02.jpg");
+    height:400px;
+     width:1440px;
+    margin-top: -90px;
+    margin-bottom: 30px;
+    background-size: contain;
+
+}
+.banner-msg {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 80px;
+    padding: 10px 100px;
+    
+}
+.banner-msg h4 {
+    font-size: 24px;
+}
+.orange{
+    color:orangered;
+    font-weight: 600;
+    }
+/* Tags */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    
+  }
+
+  /* IDs */
+
+  
