@@ -71,4 +71,17 @@ The winner is the first player to align their three pieces on a vertical line or
 
 ## Links
 <!-- links -->
+<!-- code -->
+home bar
+<%if(user_signed_in?)%>
 
+<h1><%= @user.username %> </h1>
+<button> <%= link_to "Edit Account", edit_user_registration_path %> </button>
+<button> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </button>
+<button> <%= link_to "new", new_issue_path %> </button>
+<button> <%= link_to "issues", issues_path %> </button>
+
+<% else %>
+<button> <%= link_to "Log In", new_user_session_path %></button>
+<button> <%= link_to "Sign Up", new_user_registration_path %></button>
+<% end %>
