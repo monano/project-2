@@ -2,6 +2,7 @@ class AnswersController < ApplicationController
 
     def index
         @answers = Answer.where(issue_id: params[:issue_id])
+     
     end
 
     def show

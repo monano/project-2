@@ -1,24 +1,35 @@
-<% i=0 %>
-<div>
-<table>
-<thead>
-<th>#</th>
-<th>Title</th>
-<th>Type</th>
-</thead>
-<tbody>
-<% @issues.each do |issue| %>
-<% i=i+1 %>
-<tr>
-<th scope='row'><%=i%>
-<td><%= link_to issue.title, issue_path(issue) %></td>
-<td><%= issue.issue_type%></td>
-<td><%= link_to "edit" , edit_issue_path(issue) %>
-<td> | <%= link_to "delete" , issue_path(issue), method: :delete %>
-</tr>
-<% end %>
-</tbody>
-</table>
-</div>
+<div class="container-fluid text-center">
 
-<button><%= link_to "Back", root_path%> </button>
+   
+        <% i=0 %>
+        <% @issues.each do |issue| %>
+        <% i=i+1 %>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="well">
+                    <p><%= issue.created_at.to_date %></p>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="well">
+                    <p><%= link_to issue.title, issue_path(issue) %></p>
+                </div>
+            </div>
+            
+            <div class="col-sm-2">
+                <div class="well">
+                    <p><%= issue.issue_type %></p>
+                </div>
+            </div>
+              <div class="col-sm-2">
+                <div class="well">
+                   <%= link_to ("<i class='far' style='font-size:22px;color:black'> &#xf044; </i>").html_safe, edit_issue_path(issue)%>
+                    <%= link_to ("<i class='far' style='font-size:22px;color:darkred'> &#xf2ed; </i>").html_safe, issue_path(issue) , method: :delete %>  
+                </div>
+            </div>
+        </div>
+        <% end %>
+  <strong><%= link_to "Back", root_path%> </strong>
+</div><br>
+

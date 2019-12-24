@@ -1,12 +1,19 @@
 /* Classes */
-.nav.navbar-nav{
-    display: inline;
+.navbar.navbar-inverse{
+    background-color:rgb(37, 37, 37);
 }
-.container{
-    width: 1200px;
-    margin: 0px;
+.nav.navbar-nav{
+    color: rgb(255, 255, 255);
+    display: inline;
+   
 }
 
+.nav.navbar-nav li{
+    margin: 10px 5px;
+    padding: 0px 10px;
+    border: solid white 2px;
+    border-radius: 50px;
+}
 .banner{
     display: flex;
     justify-content: center;
@@ -30,10 +37,11 @@
     font-size: 24px;
 }
 .orange{
-    color:orangered;
-    font-weight: 600;
+    color:orangered ;
+    font-weight: 600 ;
     }
 /* Tags */
+
 footer {
     background-color: #555;
     color: white;

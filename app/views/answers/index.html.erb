@@ -1,21 +1,27 @@
-<h1>Answers</h1>
 
-<% @answers.each do |answer| %>
-<%= link_to ("<i class='far' style='font-size:25px;color:green'> &#xf582; </i>").html_safe %>
-<%= link_to ("<i class='far' style='font-size:25px;color:navy'> &#xf5b4; </i>").html_safe %>
-<%= link_to ("<i class='far' style='font-size:22px;color:black'> &#xf044; </i>").html_safe, edit_issue_answer_path(answer.issue_id,answer)%>
-<%= link_to ("<i class='far' style='font-size:22px;color:darkred'> &#xf2ed; </i>").html_safe, issue_answer_path(answer.issue_id,answer) , method: :delete %>
-<h3><%= answer.description %></h3>
-<p><em>working
-<% if(answer.working + answer.not_working !=0) %>
-<%= (answer.working / (answer.working + answer.not_working)) * 100%>
-<% else %>
-<%= 0 %>
-<% end %>
-% of the times</em></p>
-<% end %>
-<button> <%= link_to "Back", issue_path(params[:issue_id])	 %> </button>
-<%# did not work emoje (&#xf5b4;) %>
-<%# worked emoje (&#xf582;) %>
-<%# delete icone (&#xf2ed;) %>
-<%# edit icone (&#xf044;) %>
+<div class="container-fluid">
+    <% @answers.each do |answer|%>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well">
+       
+                <p class="orange">@<%= answer.user.username %></p>
+                <em><%= answer.updated_at.to_date %></em>
+  
+                  <p style="font-size:24px;"><%= answer.description %></p>
+             <br>
+                  <div>
+                   <% if(!user_signed_in? || answer.user.id != current_user.id) %>
+                    <%= link_to ("<i class='far' style='font-size:25px;color:green'> &#xf582; </i>").html_safe %>
+                    <%= link_to ("<i class='far' style='font-size:25px;color:navy'> &#xf5b4; </i>").html_safe %>
+                    <% else %>
+                    <%= link_to ("<i class='far' style='font-size:22px;color:black'> &#xf044; </i>").html_safe, edit_issue_answer_path(answer.issue_id,answer)%>
+                    <%= link_to ("<i class='far' style='font-size:22px;color:darkred'> &#xf2ed; </i>").html_safe, issue_answer_path(answer.issue_id,answer) , method: :delete %>  
+                    <% end %>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+</div>

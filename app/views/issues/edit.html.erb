@@ -1,33 +1,56 @@
-<h1>edit page</h1>
+<h1>Edit Issue</h1>
+<%# <form class="container-fluid"> %>
+   
+        <div class="col-sm-12 well">
+           <%= form_for @issue, url:{action: "update"} do |f| %>  
 
-<%= form_for @issue, url:{action: "update"} do |f| %>
-        <%= f.label :title, 'Title : ' %><br>
-        <%= f.text_field :title %><br><br>
+                 <h3>Mandatory Info</h3><hr>
+                <div class="form-group">
+                        <label > <%= f.label :title, 'Title : ' %>  
+                        <%= f.text_field :title  %>
+                </div>
+                <div class="form-group">
+                        <label ><%= f.label :description, 'Description : ' %> 
+                        <%= f.text_field :description  %>
 
-        <%= f.label :description, 'Description : ' %><br>
-        <%= f.text_field :description %><br><br>
+                </div>
+                <div class="form-group">
+                         <%= f.label :issue_type, 'issue_type : ' %> 
+                        <%= f.text_field :issue_type  %>
 
-        <%= f.label :issue_type, 'issue_type : ' %><br>
-        <%= f.text_field :issue_type %><br><br>
+                </div>
+       
+     <br> <h3>Additional Info</h3><hr>
+                <div class="form-group">
 
-        <%= f.label :img, 'Image :' %><br>
-        <%= f.text_field :img  %><br><br>
+                        <%= f.label :img, 'Image :' %>
+                        <%= f.text_field :img   %>
+                </div>
+                <div class="form-group">
 
-         <%= f.label :os, 'OS : ' %><br>
-        <%= f.text_field :os %><br><br>
+                          <%= f.label :os, 'OS : ' %> 
+                        <%= f.text_field :os  %>
+                </div>
+                <div class="form-group">
+                          <%= f.label :device_make, 'device_make : ' %> 
+                        <%= f.text_field :device_make  %>
+                </div>
+                <div class="form-group">
 
-        <%= f.label :device_make, 'device_make : ' %><br>
-        <%= f.text_field :device_make %><br><br>
+                          <%= f.label :pl, 'PL : ' %> 
+                        <%= f.text_field :pl  %>
+                </div>
+                <div class="form-group">
+                          <%= f.label :pl_version, 'PL_version :' %> 
+                        <%= f.text_field :pl_version   %>
+                </div>
+                <div class="form-group">
 
-        <%= f.label :pl, 'PL : ' %><br>
-        <%= f.text_field :pl %><br><br>
+                          <%= f.label :text_editor, 'text_editor :' %> 
+                        <%= f.text_field :text_editor   %>
 
-        <%= f.label :pl_version, 'PL_version :' %><br>
-        <%= f.text_field :pl_version  %><br><br>
+                </div>
 
-        <%= f.label :text_editor, 'text_editor :' %><br>
-        <%= f.text_field :text_editor  %><br><br>
-
-        <%= f.submit " Save " %>
-
-<% end %>
+       <%= f.submit " save " %>
+        <% end %>
+     </div>

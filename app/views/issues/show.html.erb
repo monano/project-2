@@ -1,21 +1,45 @@
-<h1>show page</h1>
-<h1><%= @issue.title %></h1>
-<h5><%= @issue.created_at %> | <%= @issue.updated_at %> </h5>
-<h4><%= @issue.description %> </h4>
-<h5><%= @issue.issue_type %> </h5>
-<h5><%= @issue.os %> </h5>
-<h5><%= @issue.device_make %> </h5>
-<h5><%= @issue.pl %> | <%= @issue.pl_version %>  </h5>
-<h5><%= @issue.text_editor %> </h5>
-<h5><%= @issue.no_users %> </h5>
-<button><%= link_to "add answers" , new_issue_answer_path(@issue) %>
-<button> <%= link_to "Answers", issue_answers_path(@issue) %> </button>
+    
+<div class="container-fluid ">
+<div class="row">
+        <div class="col-sm-12 well">
+           
+ <h1><%= @issue.title %></h1>
+   <%= link_to "answers", issue_answers_path(@issue) %> |  
+ <%= link_to "add answer" , new_issue_answer_path(@issue) %> 
+  
 
-<% if (@back_path == "http://localhost:3000/issues/new" || "http://localhost:3000/issues/:id/edit" )%>
-<button><%= link_to "back", root_path %></button>
-<% else %>
-<button><%= link_to "back", :back %></button>
-<% end %>
+   
+         
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-sm-9 well">
+            <div class="well">
+                <h6>Asked on: <%= @issue.created_at.to_date %> | Updated: <%= @issue.updated_at.to_date %> </h6>
+                <h4><%= @issue.description %> </h4>
+     
+            </div>
+        </div>
+        <div class="col-sm-3 well">
+            <div class="well">
+             <h5>issue type: <%= @issue.issue_type %> </h5>
+                <h5>operating system: <%= @issue.os %> </h5>
+                <h5>device make: <%= @issue.device_make %> </h5>
+                <h5>program language: <%= @issue.pl %>  <%= @issue.pl_version %> </h5>
+                <h5>text editor: <%= @issue.text_editor %> </h5>
+                <h5>users having same problem: <%= @issue.no_users %> </h5>
 
-
-
+   
+            </div>
+  
+            </div>
+    </div>
+    <div class="text-center">
+   <% if (@back_path == "http://localhost:3000/issues/new" || "http://localhost:3000/issues/:id/edit" )%>
+   <strong> <%= link_to "Back", root_path %>  </strong>
+    <% else %>
+    <strong>  <%= link_to "Back", :back %>  </strong>
+    <% end %>
+    </div><br>
+</div>

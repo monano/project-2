@@ -1,57 +1,64 @@
-<div class="container text-center">    
-  <div class="row">
-    <div class="col-sm-3 well">
-      <div class="well">
-      <%if(!user_signed_in?)%>
-          <p> Join Us </p>
-       </div>
-           <% else %>
-         <p><%= @user.username %> </p>     
-          </div>
-          <div class="alert alert-success fade in">
-           <%= link_to "New", new_issue_path %> 
-      </div>
-     <div class="well">
-     <%= link_to "Issues", issues_path %>
-      </div>
-  <% end %>
-
-    </div>
-    <div class="col-sm-7">
-    
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
-            <div class="panel-body">
-              <p contenteditable="true">Happy Journey on Finding Answers For Your Issues</p>
-            
-            </div>
-          </div>
-        </div>
-      </div>
-
-   <% i=0 %>
-<% @issues.each do |issue| %>
-<% i=i+1 %>
+<div class="container-fluid text-center">
     <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p class="orange">@<%= issue.user.username %> </p>
-           <p><%= issue.created_at.to_date %></p>
-          </div>
+        <div class="col-sm-2 well">
+            <div class="well">
+                <%if(!user_signed_in?)%>
+                <p> Join Us </p>
+            </div>
+            <% else %>
+            <p><%= @user.username %> </p>
         </div>
-        <div class="col-sm-9 ">
-          <div class="well">
-            <p><%= link_to issue.title, issue_path(issue) %></p>
-          </div>
+        <div class="well">
+            <%= link_to "New", new_issue_path %>
         </div>
-      </div>
+        <div class="well">
+            <%= link_to "Issues", issues_path %>
+        </div>
+        <% end %>
 
-    
-<% end %>
-  </div>     
     </div>
-  </div>
+    <div class="col-sm-10">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default text-left">
+                    <div class="panel-body">
+                        <p contenteditable="true">Happy Journey on Finding Answers For Your Issues</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% i=0 %>
+        <% @issues.each do |issue| %>
+        <% i=i+1 %>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="well">
+                    <p class="orange">by <%= issue.user.username %> </p>
+                    <p><%= issue.created_at.to_date %></p>
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+                <div class="well">
+                    <p><%= link_to issue.title, issue_path(issue) %></p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="well">
+                    <p><%= issue.issue_type %></p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <% end %>
+    </div>
+</div>
+</div>
 </div>
 
 <%# <button> link_to "solutions" </button> %>
