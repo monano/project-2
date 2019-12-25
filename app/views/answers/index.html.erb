@@ -10,6 +10,7 @@
   
                   <p style="font-size:24px;"><%= answer.description %></p>
              <br>
+             <%# working ? %>
                   <div>
                    <% if(!user_signed_in? || answer.user.id != current_user.id) %>
                     <%= link_to ("<i class='far' style='font-size:25px;color:green'> &#xf582; </i>").html_safe %>
