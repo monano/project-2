@@ -10,10 +10,10 @@
             <p><%= @user.email%></p>
         </div>
         <div class="well">
-            <%= link_to "New", new_issue_path %>
+            <%= link_to "Add New Issue", new_issue_path %>
         </div>
         <div class="well">
-            <%= link_to "Issues", issues_path %>
+            <%= link_to "My Issues List", issues_path %>
         </div>
         <% end %>
 
@@ -23,8 +23,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-default text-left">
-                    <div class="panel-body">
-                     <p contenteditable="true">Happy Journey on Finding Answers For Your Issues</p><br>
+                    <div class="panel-body text-center">
+                     <p contenteditable="true"><strong>Happy Journey on Finding Answers For Your Issues</strong></p><br>
                     <%# filter %>
                         <%# <form action="/issues" method="GET">
                         <input type="text" name="search_name" >
@@ -43,24 +43,24 @@
         <% i=i+1 %>
         <div class="row">
             <div class="col-sm-2">
-                <div class="well">
+                <%# <div class="well"> %>
                     <p class="green">by <%= issue.user.username %> </p>
                     <p><%= issue.created_at.to_date %></p>
-                </div>
+                <%# </div> %>
             </div>
 
             <div class="col-sm-8">
-                <div class="well">
+                <%# <div class="well"> %>
                     <p><%= link_to issue.title, issue_path(issue) %></p>
-                </div>
+                <%# </div> %>
             </div>
             <div class="col-sm-2">
-                <div class="well">
+                <%# <div class="well"> %>
                     <p><%= issue.issue_type %></p>
-                </div>
+                <%# </div> %>
 
             </div>
-        </div>
+        </div><hr>
 
 
         <% end %>
