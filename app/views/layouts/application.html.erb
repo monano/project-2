@@ -24,38 +24,57 @@
   <%# end bootstrap %>
   <script src="https://kit.fontawesome.com/2bae5d5932.js" crossorigin="anonymous"></script>
 </head>
-  <%# // Home Navigation %>
+<%# // Home Navigation %>
 <header>
   <nav class="navbar navbar-inverse">
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-left">
-        
-          <li><%=link_to "Home", root_path %></li>
-          
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <%if(user_signed_in?)%>
-          <li><%=link_to "Edit Account", edit_user_registration_path %></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></li>
-          <% else %>
-          <li><%= link_to "Log In", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" >
+     <ul class="nav navbar-nav">
+        <h3>Dilma</h3>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+
+        <li><%=link_to "Home", root_path %></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%if(user_signed_in?)%>
+        <li><%=link_to "Edit Account", edit_user_registration_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></li>
+        <% else %>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </nav>
 </header>
 
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
+  <div class="container-fluid text-center">
+     <div class="row">
+         <div class="col-sm-12 well msg"> 
+        <%  if(user_signed_in?) %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%else%>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%end%>
+      </div>
+    </div> 
 
-  <div class="banner">
-    <div class="banner-msg">
-      <h4>Answers Are Looking For You</h4>
+    <div class="row">
+      <div class="col-sm-12 well banner">
+   
+          <div class="banner-msg">
+            <h4>Answers Are Looking For You</h4>
+        </div>
+      </div>
     </div>
+
   </div>
+
 
 
 

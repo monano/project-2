@@ -1,8 +1,9 @@
 <h2>Sign up</h2>
+<div class="col-sm-12 well">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+    <div class="form-group">
  <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
@@ -25,10 +26,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+<br>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>
+</div>

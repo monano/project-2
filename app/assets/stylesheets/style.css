@@ -1,13 +1,19 @@
 /* Classes */
 .navbar.navbar-inverse{
     background-color:rgb(37, 37, 37);
+    margin: 0px;
+    padding: 0px;
 }
 .nav.navbar-nav{
     color: rgb(255, 255, 255);
     display: inline;
    
 }
-
+.nav.navbar-nav h3{
+    color: rgb(226, 72, 25) ;
+    margin-right: 20px;
+    font-weight: 800;
+}
 .nav.navbar-nav li{
     margin: 10px 5px;
     padding: 0px 10px;
@@ -17,11 +23,10 @@
 .banner{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     background-image: url("https://thebristolcable.org/wp-content/uploads/2016/01/CallCentresFINAL02.jpg");
     height:400px;
-     width:1440px;
-    margin-top: -90px;
+    width:1440px;
     margin-bottom: 30px;
     background-size: contain;
 
@@ -29,15 +34,30 @@
 .banner-msg {
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     padding: 10px 100px;
     
 }
 .banner-msg h4 {
     font-size: 24px;
 }
-.orange{
-    color:orangered ;
+.col-sm-12.well.msg{
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(43, 88, 73,0.5);
+    margin: 0px;
+    padding: 0px;
+    font-size: 24px;
+    color: White;
+}
+.username{
+    color:orangered;
+    font-size: 24px;
+    font-weight: 600 ;
+}
+
+.green{
+    color:rgb(45, 100, 77) ;
     font-weight: 600 ;
     }
 /* Tags */

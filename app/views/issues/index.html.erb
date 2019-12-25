@@ -24,8 +24,13 @@
             </div>
               <div class="col-sm-2">
                 <div class="well">
+                      <% if(!user_signed_in? || issue.user.id != current_user.id) %>
+                      <p class="green" ><%= issue.user.username %></p>
+                    <% else %>
                    <%= link_to ("<i class='far' style='font-size:22px;color:black'> &#xf044; </i>").html_safe, edit_issue_path(issue)%>
                     <%= link_to ("<i class='far' style='font-size:22px;color:darkred'> &#xf2ed; </i>").html_safe, issue_path(issue) , method: :delete %>  
+                    <% end %>
+
                 </div>
             </div>
         </div>

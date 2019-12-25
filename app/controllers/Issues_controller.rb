@@ -1,6 +1,11 @@
 class IssuesController < ApplicationController
-
+    before_action :authenticate_user! , except: [:show]
     def index
+        # filter
+        # initialize_search
+        # handle_search_name
+        # handle_filters
+        # filter
         @issues = current_user.issues
     end
 
@@ -15,7 +20,11 @@ class IssuesController < ApplicationController
 
     def create
         @issue = current_user.issues.create(issue_params)
+        if(Issue.exists? @issue.id )
         redirect_to issue_path(@issue)
+        else
+        redirect_to root_path
+        end
     end
 
     def edit
@@ -33,6 +42,33 @@ class IssuesController < ApplicationController
         @issue.destroy
         redirect_to issues_path
     end
+
+# filter
+    # def initialize_search
+    #     # @issues = Issue.alphabetical
+    #     session[:search_name] ||= params[:search_name]
+    #     session[:filter] = params[:filter]
+    #     params[:filter_option] = nil if params[:filter_option] == ""
+    #     session[:filter_option] = params[:filter_option]
+    #   end
+      
+    #   def handle_search_name
+    #     if session[:search_name]
+    #       @issues = Issue.where("title LIKE ?", "%#{session[:search_name]}%")
+    #       @issues = @issues.where(title: @issues.pluck(:title))
+    #     # else
+    #     #   @issues = Issue.all
+    #     end
+    #   end
+    
+    #   def handle_filters
+    #     if session[:filter_option] && session[:filter] == "issue_type"
+    #       @issues = @issues.where(issue_type: session[:filter_option])
+    #     #   @issues = @issues.where(title: @issues.pluck(:title))
+    #     # elsif session[:filter_option] && session[:filter] == "title"
+    #     #   @issues = @issues.where(title: session[:filter_option])
+    #     end
+    #   end
 
     private
     def issue_params
