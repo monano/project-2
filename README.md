@@ -1,8 +1,7 @@
 <!-- heading section -->
 # Dilma Community
 
-This is a two players game that start with each player having 3 stones to place it on the board,
-The winner is the first player to align their three pieces on a vertical line or horizontal line.
+This is a community were any person with issues regarding the techncal or computer field can publish the issue and recive answers for it, or could look for the same issue published by another users.
 
 ## My Wbsite Deployment
 https://shrouded-savannah-19062.herokuapp.com/
