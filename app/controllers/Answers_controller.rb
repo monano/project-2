@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
     def index
         @answers = Answer.where(issue_id: params[:issue_id])
         # @answers = Product.where(nil) # creates an anonymous scope
-        @answers = @answers.starts_with(params[:starts_with]) if params[:starts_with].present?
+        # @answers = @answers.starts_with(params[:starts_with]) if params[:starts_with].present?
      
     end
 

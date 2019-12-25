@@ -1,14 +1,17 @@
 <!-- heading section -->
-# IT Issues Solving Community
+# Dilma Community
 
 This is a two players game that start with each player having 3 stones to place it on the board,
 The winner is the first player to align their three pieces on a vertical line or horizontal line.
 
 ## My Wbsite Deployment
+https://shrouded-savannah-19062.herokuapp.com/
 
 <!-- unorder list -->
 ## Technologis Used
-
+   - Ruby on Rails
+   - Bootstrap
+   - HTML/CSS
 ## Website ERD, Wireframe and User Stories
 <!-- images -->
 ### ERD
@@ -39,18 +42,22 @@ The winner is the first player to align their three pieces on a vertical line or
 
 ## Four Days Of Coding
 ### Day One
-   - wireframe
-   - user story
-   - ERD
-   - devise users
-   - model issues
+   - Write and design the wireframe, user story and ERD for the Dilma wep app.
+   - Create the model User using devise.
+   - Create the model Issue.
+ 
    
 ### Day Two
-   - model issues update and delete
-   - model solution CRUD
+   - Added CRUD for the model Issue. 
+   - Create the model Answer.
+   - Added CRUD for the model Answer.
+
 ### Day Three
+   - Designing the Issue views using Bootstrap
    
 ### Day Four <last day>
+   - Designing the user views using Bootstrap
+   - Designing the Issue views using Bootstrap
    
 <!-- order list -->
 <!-- 
@@ -64,24 +71,40 @@ The winner is the first player to align their three pieces on a vertical line or
 <!-- --- -->
 
 ## Snippet Of The Code
+### Back to the previous page
+```rb
+    <div class="text-center">
+   <% if (@back_path == "http://localhost:3000/issues/new" || "http://localhost:3000/issues/:id/edit" )%>
+   <strong> <%= link_to "Back", root_path %>  </strong>
+    <% else %>
+    <strong>  <%= link_to "Back", :back %>  </strong>
+    <% end %>
+    </div><br>
+</div>
+```
+### Embed html in an embedded ruby 
+```rb
+     <div>
+                   <% if(!user_signed_in? || answer.user.id != current_user.id) %>
+                    <%= link_to ("<i class='far' style='font-size:25px;color:green'> &#xf582; </i>").html_safe %>
+                    <%= link_to ("<i class='far' style='font-size:25px;color:navy'> &#xf5b4; </i>").html_safe %>
+                    <% else %>
+                    <%= link_to ("<i class='far' style='font-size:22px;color:black'> &#xf044; </i>").html_safe, edit_issue_answer_path(answer.issue_id,answer)%>
+                    <%= link_to ("<i class='far' style='font-size:22px;color:darkred'> &#xf2ed; </i>").html_safe, issue_answer_path(answer.issue_id,answer) , method: :delete %>  
+                    <% end %>
+                    </div>
+```
 
 ## Challenges 
+   - Submitting a review on the published answers.
+   - Designing with Bootstrap.
 
 ## Features and Improvements to be in Three Mens Morris Game V2 
+   - Enable user to bookmark an issue or answer.
+   - Enable user to review on an answer.
+   - Add a search and filter features.
 
 ## Links
-<!-- links -->
-<!-- code -->
-home bar
-<%if(user_signed_in?)%>
-
-<h1><%= @user.username %> </h1>
-<button> <%= link_to "Edit Account", edit_user_registration_path %> </button>
-<button> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </button>
-<button> <%= link_to "new", new_issue_path %> </button>
-<button> <%= link_to "issues", issues_path %> </button>
-
-<% else %>
-<button> <%= link_to "Log In", new_user_session_path %></button>
-<button> <%= link_to "Sign Up", new_user_registration_path %></button>
-<% end %>
+   - [Ruby on Rails](https://rubyonrails.org/)
+   - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+   - [Bootstrap Cheatsheet](https://hackerthemes.com/bootstrap-cheatsheet/#table)
