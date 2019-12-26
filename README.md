@@ -4,7 +4,7 @@
 This is a community were any person with issues regarding the techncal or computer field can publish the issue and recive answers for it, or could look for the same issue published by another users.
 
 ## My Wbsite Deployment
-https://shrouded-savannah-19062.herokuapp.com/
+[Dilma](https://shrouded-savannah-19062.herokuapp.com/)
 
 <!-- unorder list -->
 ## Technologis Used
@@ -27,17 +27,17 @@ https://shrouded-savannah-19062.herokuapp.com/
 
 ### User Stories
 1.	User without account can only see issues and show any issue.
-2.	User can sign in to the site, and must enter the email and password to complete signing in.
+2.	User can sign in to the site, and must enter the email and password to complete       signing in.
 3.	After signing in user can edit its account, or sign out.
 4.	User can add a new issue.
 5.	When user add new issue, user must enter the title, type and description.
 6.	User can onley add solution to an existed issue.
 7.	When user add new solution, user must enter the description.
-8.	User can add comment to an existed solution by press button worked if the solution worked or didn't work if the solution did not work
+8.	User can add comment to an existed solution by press button worked if the solution    worked or didn't work if the solution did not work
 9.	User can delete edit an issue after making it.
-10.	User can delete edit a solution after making it.
-11.	User can delete edit a comment after making it.
-12.	User can see the issues, solutions, comments after making it.
+10. User can delete edit a solution after making it.
+11. User can delete edit a comment after making it.
+12. User can see the issues, solutions, comments after making it.
 
 ## Four Days Of Coding
 ### Day One
@@ -81,7 +81,7 @@ https://shrouded-savannah-19062.herokuapp.com/
     </div><br>
 </div>
 ```
-### Embed html in an embedded ruby 
+### Embed html in ruby 
 ```rb
      <div>
                    <% if(!user_signed_in? || answer.user.id != current_user.id) %>
